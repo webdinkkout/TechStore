@@ -1,0 +1,65 @@
+.button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.62rem;
+
+  padding: 0.5rem 1.25rem;
+  min-width: 6rem;
+
+  background-color: #0156ff;
+  color: #fff;
+
+  font-size: 0.875rem;
+  font-weight: 600;
+
+  cursor: pointer;
+  user-select: none;
+
+  transition: 0.3s;
+}
+
+.order {
+  order: 1;
+}
+
+.button.order > svg {
+  order: 2;
+}
+
+.button:active {
+  transform: scale(0.95);
+}
+.button.loading:active,
+.button.disabled:active {
+  transform: unset;
+}
+
+.rounded {
+  border-radius: 6.25rem;
+}
+
+.disabled {
+  opacity: 0.5;
+  background-color: #555;
+  cursor: default;
+}
+
+.outline {
+  border: 2px solid #0156ff;
+  color: #0156ff;
+  background-color: transparent;
+}
+
+.spinner {
+  animation: spinner 1s linear infinite;
+}
+
+@keyframes spinner {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
