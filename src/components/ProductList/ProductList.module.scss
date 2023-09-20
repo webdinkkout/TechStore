@@ -1,0 +1,36 @@
+.nav {
+  display: flex;
+  gap: 1.64rem;
+  margin-bottom: 1.45rem;
+
+  &__item {
+    display: inline-block;
+    color: #838383;
+    text-align: center;
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 1.4rem;
+    cursor: pointer;
+    background-color: transparent;
+    padding: 0.19rem 0;
+
+    &.active {
+      color: #000;
+      background-color: transparent;
+      position: relative;
+
+      &::after {
+        content: '';
+        position: absolute;
+        width: 90%;
+        height: 2px;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        border-radius: 0.13rem;
+        background-color: #00aeb8;
+      }
+    }
+  }
+}
