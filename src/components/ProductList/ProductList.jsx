@@ -6,70 +6,39 @@ import Col from '../Col'
 
 const cx = classNames.bind(styles)
 
-function ProductList({ navs = [] }) {
+function ProductList({ navs, products }) {
   return (
     <div className={cx('wrapper')}>
       <div className={cx('nav')}>
-        {navs.map((nav) => {
-          return <button className={cx('nav__item', 'active')}>MSI GS Series</button>
-        })}
+        {navs &&
+          navs.map((nav) => {
+            return (
+              <button
+                key={nav.id}
+                className={cx('nav__item', {
+                  active: nav.active
+                })}
+              >
+                {nav.name}
+              </button>
+            )
+          })}
       </div>
       <div className={cx('wrapper__product')}>
         <Row>
-          <Col span={6}>
-            <ProductItem
-              name={'EX DISPLAY : MSI Pro 16 Flex-036AU 15.6 MULTITOUCH All-In-On...'}
-              currentPrice={499}
-              price={900}
-              img={'/images/Laptop.png'}
-              isCheck
-            ></ProductItem>
-          </Col>
-          <Col span={6}>
-            <ProductItem
-              name={'EX DISPLAY : MSI Pro 16 Flex-036AU 15.6 MULTITOUCH All-In-On...'}
-              currentPrice={499}
-              price={900}
-              img={'/images/Laptop.png'}
-              isCheck
-            ></ProductItem>
-          </Col>
-          <Col span={6}>
-            <ProductItem
-              name={'EX DISPLAY : MSI Pro 16 Flex-036AU 15.6 MULTITOUCH All-In-On...'}
-              currentPrice={499}
-              price={900}
-              img={'/images/Laptop.png'}
-              isCheck
-            ></ProductItem>
-          </Col>
-          <Col span={6}>
-            <ProductItem
-              name={'EX DISPLAY : MSI Pro 16 Flex-036AU 15.6 MULTITOUCH All-In-On...'}
-              currentPrice={499}
-              price={900}
-              img={'/images/Laptop.png'}
-              isCheck
-            ></ProductItem>
-          </Col>
-          <Col span={6}>
-            <ProductItem
-              name={'EX DISPLAY : MSI Pro 16 Flex-036AU 15.6 MULTITOUCH All-In-On...'}
-              currentPrice={499}
-              price={900}
-              img={'/images/Laptop.png'}
-              isCheck
-            ></ProductItem>
-          </Col>
-          <Col span={6}>
-            <ProductItem
-              name={'EX DISPLAY : MSI Pro 16 Flex-036AU 15.6 MULTITOUCH All-In-On...'}
-              currentPrice={499}
-              price={900}
-              img={'/images/Laptop.png'}
-              isCheck
-            ></ProductItem>
-          </Col>
+          {products.map((item) => {
+            return (
+              <Col key={item.id} span={6}>
+                <ProductItem
+                  name={item.name}
+                  currentPrice={item.currentPrice}
+                  price={item.price}
+                  img={item.img}
+                  isCheck={item.isCheck}
+                ></ProductItem>
+              </Col>
+            )
+          })}
         </Row>
       </div>
     </div>

@@ -11,6 +11,28 @@ import styles from './Home.module.scss'
 
 const cx = classNames.bind(styles)
 
+const NAV_LIST = [
+  { id: 1, name: 'taile', active: true },
+  { id: 2, name: 'Nhatdung', active: false }
+]
+const PRODUCT_LIST = [
+  {
+    id: 1,
+    name: "'EX DISPLAY : MSI Pro 16 Flex-036AU 15.6 MULTITOUCH All-In-On...'",
+    currentPrice: 499,
+    price: 900,
+    img: '/images/Laptop.png',
+    isCheck: true
+  },
+  {
+    id: 2,
+    name: "'EX DISPLAY : MSI Pro 16 Flex-036AU 15.6 MULTITOUCH All-In-On...'",
+    currentPrice: 499,
+    price: 900,
+    img: '/images/Laptop.png',
+    isCheck: false
+  }
+]
 function Home() {
   const responsive = {
     superLargeDesktop: {
@@ -30,6 +52,7 @@ function Home() {
       items: 1
     }
   }
+
   return (
     <div className={cx('home-page')}>
       <section className={cx('slide')}>
@@ -115,68 +138,11 @@ function Home() {
           <p className={cx('ad__item')}>own it now, up to 6 months interest free learn more</p>
         </div>
       </section>
-
       <section>
-        <Row>
-          <Col span={6}>
-            <ProductItem
-              name={'EX DISPLAY : MSI Pro 16 Flex-036AU 15.6 MULTITOUCH All-In-On...'}
-              currentPrice={499}
-              price={900}
-              img={'/images/Laptop.png'}
-              isCheck
-            ></ProductItem>
-          </Col>
-          <Col span={6}>
-            <ProductItem
-              name={'EX DISPLAY : MSI Pro 16 Flex-036AU 15.6 MULTITOUCH All-In-On...'}
-              currentPrice={499}
-              price={900}
-              img={'/images/Laptop.png'}
-              isCheck
-            ></ProductItem>
-          </Col>
-          <Col span={6}>
-            <ProductItem
-              name={'EX DISPLAY : MSI Pro 16 Flex-036AU 15.6 MULTITOUCH All-In-On...'}
-              currentPrice={499}
-              price={900}
-              img={'/images/Laptop.png'}
-              isCheck
-            ></ProductItem>
-          </Col>
-          <Col span={6}>
-            <ProductItem
-              name={'EX DISPLAY : MSI Pro 16 Flex-036AU 15.6 MULTITOUCH All-In-On...'}
-              currentPrice={499}
-              price={900}
-              img={'/images/Laptop.png'}
-              isCheck
-            ></ProductItem>
-          </Col>
-          <Col span={6}>
-            <ProductItem
-              name={'EX DISPLAY : MSI Pro 16 Flex-036AU 15.6 MULTITOUCH All-In-On...'}
-              currentPrice={499}
-              price={900}
-              img={'/images/Laptop.png'}
-              isCheck
-            ></ProductItem>
-          </Col>
-          <Col span={6}>
-            <ProductItem
-              name={'EX DISPLAY : MSI Pro 16 Flex-036AU 15.6 MULTITOUCH All-In-On...'}
-              currentPrice={499}
-              price={900}
-              img={'/images/Laptop.png'}
-              isCheck
-            ></ProductItem>
-          </Col>
-        </Row>
+        <ProductList products={PRODUCT_LIST}></ProductList>
       </section>
-
       <section>
-        <ProductList></ProductList>
+        <ProductList navs={NAV_LIST} products={PRODUCT_LIST}></ProductList>
       </section>
     </div>
   )
