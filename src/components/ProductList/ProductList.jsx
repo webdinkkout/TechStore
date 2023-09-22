@@ -26,19 +26,23 @@ function ProductList({ navs, products }) {
       </div>
       <div className={cx('wrapper__product')}>
         <Row>
-          {products.map((item) => {
-            return (
-              <Col key={item.id} span={6}>
-                <ProductItem
-                  name={item.name}
-                  currentPrice={item.currentPrice}
-                  price={item.price}
-                  img={item.img}
-                  isCheck={item.isCheck}
-                ></ProductItem>
-              </Col>
-            )
-          })}
+          {products ? (
+            products.map((item) => {
+              return (
+                <Col key={item.id} span={6}>
+                  <ProductItem
+                    name={item.name}
+                    currentPrice={item.salePrice}
+                    price={item.price}
+                    img={item.img}
+                    isCheck={item.isCheck}
+                  ></ProductItem>
+                </Col>
+              )
+            })
+          ) : (
+            <div>Mang Nay khong co san pham</div>
+          )}
         </Row>
       </div>
     </div>

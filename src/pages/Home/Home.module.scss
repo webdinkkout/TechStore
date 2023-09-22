@@ -71,3 +71,15 @@
     }
   }
 }
+.brand {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.introduce {
+  &__title {
+    font-size: 1.375rem;
+    font-weight: 600;
+    margin-bottom: 1.31rem;
+  }
+}
