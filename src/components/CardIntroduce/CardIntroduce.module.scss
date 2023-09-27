@@ -1,0 +1,17 @@
+.introduce {
+  & > img {
+    object-fit: cover;
+    object-position: center;
+    width: 100%;
+    height: 9.44413rem;
+  }
+  &__desc {
+    padding: 0.62rem 0.5rem;
+    text-align: center;
+  }
+  &__date {
+    color: var(--Color---5, #a2a6b0);
+    text-align: center;
+    font-size: 0.625rem;
+  }
+}
