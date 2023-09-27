@@ -1,7 +1,7 @@
 import classNames from 'classnames/bind'
+import { FaSearch, FaCartPlus } from 'react-icons/fa'
 
 import Nav from '../Nav'
-import Button from '~/components/Button'
 
 import styles from './Header.module.scss'
 
@@ -13,7 +13,17 @@ function Header() {
       <div className={cx('header__left')}>
         <img src='/images/Logo.png' alt='logo' />
         <Nav />
-        <Button outline>Our Deals</Button>
+      </div>
+      <div className={cx('header__right')}>
+        <button className={cx('header__icon')}>
+          <FaSearch />
+        </button>
+        <button className={cx('header__icon')}>
+          <FaCartPlus />
+        </button>
+        <button className={cx('header__avatar')}>
+          <img src='/images/avatar.png' alt='avatar' />
+        </button>
       </div>
     </header>
   )

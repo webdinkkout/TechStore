@@ -3,8 +3,29 @@
   align-items: center;
   justify-content: space-between;
 
+  & button {
+    cursor: pointer;
+  }
+
   &__left {
     display: flex;
     align-items: center;
+  }
+
+  &__right {
+    display: flex;
+    align-items: center;
+    gap: 1.62rem;
+  }
+
+  &__icon {
+    background-color: transparent;
+    font-size: 1.56rem;
+  }
+
+  &__avatar {
+    width: 2.25rem;
+    height: 2.25rem;
+    border-radius: 50%;
   }
 }
